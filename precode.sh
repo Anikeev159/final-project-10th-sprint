@@ -6,11 +6,7 @@
     #   dir2
     #   dir3
     #       dir4
-    mkdir task
-    mkdir task/dir1
-    mkdir task/dir2
-    mkdir task/dir3
-    mkdir task/dir3/dir4
+    mkdir -p task/{dir1,dir2,dir3/dir4}
 
     # изменяем текущую директорию на task
     cd task
@@ -25,7 +21,7 @@
     echo 'echo "$1, привет!"' >> dir2/hello.sh
 
     # устанавливаем для task/dir2/hello.sh права rwxrw-r--
-    chmod +x dir2/hello.sh
+    chmod 0774 dir2/hello.sh
 
     # сохраняем список файлов task/dir2 в task/dir2/list.txt
     ls dir2 > dir2/list.txt
